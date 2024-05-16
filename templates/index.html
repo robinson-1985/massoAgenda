@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Massoterapia</title>
+    <link rel="stylesheet" href="{% static 'admin/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agenda de Massoterapia</h1>
+        <div class="agenda">
+            <h2>Agendamentos</h2>
+            <!-- iterar sobre os agendamentos e exibi-los -->
+            {% for agendamento in agendamentos %}
+                <div class="agendamento">
+                    <span class="data">{{ agendamento.data }}</span> - <span class="horario">{{ agendamento.horario }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <footer class="footer">
+            &copy; 2024 MassoAgenda - Todos os direitos reservados.
+        </footer>
+    </div>
+</body>
+</html>
